@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Tribute Page</title>
+</head>
+
+<body>
+<main id="main">
+    <figure id="img-div">
+    <img id="image" src="https://unsplash.com/photos/a-group-of-women-dressed-in-colorful-clothing-Lk5Xu-Zl8kc" alt="Indian hand Pose">
+    <figcaption id="img-caption">Indian Dance with Hand pose.</figcaption>
+    <h1 id="title">Bollywood Film</h1>
+    <p id="tribute-info">A walk into the rich history of India's Film industry. From films that touch your <a href="https://en.wikipedia.org/wiki/Qayamat_Se_Qayamat_Tak" id="tribute-link" target="_blank" value="tribute-link"> heart</a> to scenes that are timeless in the memories of millions, Indian films have solidified itself as an industry to be reckoned with!</p>
+    </figure>
+</main>
+</body>
+</html>
