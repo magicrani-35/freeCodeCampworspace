@@ -1,0 +1,14 @@
+tr.read {
+background-image: linear-gradient(#4de5fe,#b24dd3);
+}
+
+span {
+  display: inline-block;
+}
+
+span.status {
+border: 3px double #0a0a0a;
+border-radius: 5px;
+color: #fff;
+background-image: linear-gradient(#11dd0033, #452a67);
+}
