@@ -1,5 +1,11 @@
-tr.read {
-background-image: linear-gradient(#4de5fe,#b24dd3);
+tr[class="read"] {
+  background-image: linear-gradient(#4dffa6,#4d79ff);
+}
+tr[class="to-read"] {
+  background-image: linear-gradient(#4de5fe,#b24dd3);
+}
+tr[class="in-progress"] {
+  background-image: linear-gradient(#f9e79f,#f39c12);
 }
 
 span {
@@ -11,4 +17,34 @@ border: 3px double #0a0a0a;
 border-radius: 5px;
 color: #fff;
 background-image: linear-gradient(#11dd0033, #452a67);
+}
+
+tr[class="to-read"] span[class="status"] {
+    background-image: linear-gradient(#11dd0033, #452a67);
+    border: 2px dashed #0a0a0a;
+
+}   
+
+tr[class="read"] span[class="status"] {
+    background-image: linear-gradient(#12dd00b9, #0d587b);
+    border: 2px dashed #0a0a0a;
+
+}
+
+tr[class="in-progress"] span[class="status"] {
+    background-image: linear-gradient(#f9e79f,#f39c12);
+    border: 2px dashed #0a0a0a;
+
+}
+
+span[class="status"], span[class^="rate"] {
+  height: 20px;
+
+ 
+  border: none;
+  background: none;
+  margin-left: 10px;
+
+  width: 100px;
+  padding: 2px;
 }
