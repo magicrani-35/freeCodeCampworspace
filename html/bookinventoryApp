@@ -20,13 +20,14 @@
   </tr>
   <tr class="read">
     <td>Play Dead</td>
-  <td>Harlan Coben</td>
+  <td>Harlan Corben</td>
   <td>Mystery</td>
   <td><span class="status">Read</span></td>
-  <td><span class="rate">10/10</span>
+  <td><span class="rate three">
+    <span class="one"></span>
+    <span class="two"></span>
     <span class="three"></span>
-    <span></span>
-    <span></span>
+    </span>
   </td>
   </tr>
   <tr class="to-read">
@@ -34,10 +35,11 @@
     <td>Alicia Loveless</td>
     <td>Coming of Age</td>
     <td><span class="status">To Read</span></td>
-    <td><span class="rate">-</span>
+    <td><span class="rate">
       <span class="one"></span>
-      <span></span>
-      <span></span>
+      <span class="two"></span>
+      <span class="three"></span>
+      </span>
     </td>
     </tr> 
   <tr class="in-progress">
@@ -45,10 +47,11 @@
     <td>George Orwell</td>
     <td>Dystopia</td>
     <td><span class="status">In Progress</span></td>
-    <td><span class="rate">-</span>
+    <td><span class="rate">
+      <span class="one"></span>
+      <span class="two"></span>
       <span class="three"></span>
-      <span></span>
-      <span></span>
+      </span>
     </td>
   </tr>
 </table>

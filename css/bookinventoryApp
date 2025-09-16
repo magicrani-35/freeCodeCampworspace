@@ -48,3 +48,25 @@ span[class="status"], span[class^="rate"] {
   width: 100px;
   padding: 2px;
 }
+
+span[class^="rate"] > span {
+  background-color: transparent;
+  background-image: linear-gradient(#ffdd00, #54298f);
+  border: 3px double #0a0a0a;
+  border-radius: 5px;
+  margin: 0 auto;
+  height: 20px;
+  width: 60px;
+}
+
+span[class~="one"] :first-child {
+  background-image: linear-gradient(#ffdd00, #54298f);
+}
+
+span[class~="two"] :first-child,
+span[class~="two"] :nth-child(2) {
+  background-image: linear-gradient(#ffdd00, #54298f);
+}
+span[class~="three"] span {
+  background-image: linear-gradient(#ffdd00, #54298f);
+} 
