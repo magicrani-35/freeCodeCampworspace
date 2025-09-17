@@ -1,0 +1,52 @@
+const theFool = 'The Fool';
+const theMagician = 'The Magician';
+const theHighPriestess = 'The High Priestess';
+const theEmpress = 'The Empress';
+const theEmperor = 'The Emperor';
+const theHierophant = 'The Hierophant';
+const theLovers = 'The Lovers';
+const theChariot = 'The Chariot';
+const strength = 'Strength';
+const theHermit = 'The Hermit';
+const wheelOfFortune = 'Wheel of Fortune';
+const justice = 'Justice';
+const theHangedMan = 'The Hanged Man';
+const death = 'Death';
+const temperance = 'Temperance';
+const theDevil = 'The Devil';
+const theTower = 'The Tower';
+const theStar = 'The Star';
+const theMoon = 'The Moon';
+const theSun = 'The Sun';
+const judgement = 'Judgement';
+const theWorld = 'The World';
+
+const majorArcana = [
+  theFool,
+  theMagician,
+  theHighPriestess,
+  theEmpress,
+  theEmperor,
+  theHierophant,
+  theLovers,
+  theChariot,
+  strength,
+  theHermit,
+  wheelOfFortune,
+  justice,
+  theHangedMan,
+  death,
+  temperance,
+  theDevil,
+  theTower,
+  theStar,
+  theMoon,
+  theSun,
+  judgement,
+  theWorld
+];
+
+console.log(majorArcana);
+
+console.log(`There are ${majorArcana.length} cards in the Major Arcana.`);
+
