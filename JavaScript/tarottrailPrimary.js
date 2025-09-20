@@ -706,7 +706,7 @@ const tarotDeck = [
   }
 ];
 
-console.log("Happy reading!");
+console.log("Happy Reading!");
 
 const shuffleDeck = (deck) => {
   for (let i = deck.length - 1; i > 0; i--) {
@@ -746,88 +746,8 @@ drawButton.addEventListener("click", () => {
   });
 });
 
-const meanings = {
-  "The Fool": "New beginnings, optimism, trust in life",
-  "The Magician": "Action, the power to manifest",
-  "The High Priestess": "Inaction, going within, the subconscious",
-  "The Empress": "Abundance, nurturing, fertility, life in bloom!",
-  "The Emperor": "Structure, stability, rules and power",
-  "The Hierophant": "Institutions, tradition, society and its rules",
-  "The Lovers": "Sexuality, passion, choice, uniting",
-  "The Chariot": "Movement, progress, integration",
-  "Strength": "Courage, subtle power, integration of animal self",
-  "The Hermit": "Meditation, solitude, consciousness",
-  "Wheel of Fortune": "Cycles, change, ups and downs",
-  "Justice": "Fairness, equality, balance",
-  "The Hanged Man": "Surrender, new perspective, enlightenment",
-  "Death": "The end of something, change, the impermeability of all things",
-  "Temperance": "Balance, moderation, being sensible",
-  "The Devil": "Destructive patterns, addiction, giving away your power",
-  "The Tower": "Collapse of stable structures, release, sudden insight",
-  "The Star": "Hope, calm, a good omen!",
-  "The Moon": "Mystery, the subconscious, dreams",
-  "The Sun": "Success, happiness, all will be well",
-  "Judgement": "Rebirth, a new phase, inner calling",
-  "The World": "Completion, wholeness, attainment, celebration of life",
-  "Ace of Wands": "Inspiration, new opportunities, growth, potential",
-  "Two of Wands": "Future planning, progress, decisions, discovery",
-  "Three of Wands": "Preparation, foresight, enterprise, expansion",
-  "Four of Wands": "Celebration, joy, harmony, relaxation, homecoming",
-  "Five of Wands": "Conflict, disagreements, competition, tension, diversity",
-  "Six of Wands": "Success, public recognition, progress, self-confidence",
-  "Seven of Wands": "Challenge, competition, protection, perseverance",
-  "Eight of Wands": "Movement, fast paced change, action",
-  "Nine of Wands": "Resilience, courage, persistence",
-  "Ten of Wands": "Burden, extra responsibility, hard work, completion",
-  "Page of Wands": "Inspiration, ideas, discovery, limitless potential",
-  "Knight of Wands": "Energy, passion, inspired action, adventure, impulsiveness",
-  "Queen of Wands": "Courage, confidence, independence, social butterfly",
-  "King of Wands": "Natural-born leader, vision, entrepreneur, honor",
-  "Ace of Cups": "Love, new relationships, compassion, creativity",
-  "Two of Cups": "Unified love, partnership, mutual attraction",
-  "Three of Cups": "Celebration, friendship, creativity, collaborations",
-  "Four of Cups": "Meditation, contemplation, apathy, reevaluation",
-  "Five of Cups": "Loss, grief, disappointment, despair, bereavement",
-  "Six of Cups": "Revisiting the past, childhood memories, innocence, joy",
-  "Seven of Cups": "Opportunities, choices, wishful thinking, illusion",
-  "Eight of Cups": "Disappointment, abandonment, withdrawal, escapism",
-  "Nine of Cups": "Contentment, satisfaction, gratitude, wish come true",
-  "Ten of Cups": "Divine love, blissful relationships, harmony",
-  "Page of Cups": "Creative opportunities, intuitive messages, curiosity",
-  "Knight of Cups": "Romance, charm, 'Knight in shining armor', imagination",
-  "Queen of Cups": "Compassionate, caring, emotionally stable, intuitive, in flow",
-  "King of Cups": "Emotional balance and control, generosity",
-  "Ace of Swords": "Breakthroughs, new ideas, mental clarity, success",
-  "Two of Swords": "Difficult decisions, weighing up options, an impasse, avoidance",
-  "Three of Swords": "Heartbreak, emotional pain, sorrow, grief, hurt",
-  "Four of Swords": "Rest, relaxation, meditation, contemplation, recuperation",
-  "Five of Swords": "Conflict, disagreements, competition, defeat, winning at all costs",
-  "Six of Swords": "Transition, change, rite of passage, releasing baggage",
-  "Seven of Swords": "Betrayal, deception, getting away with something, stealth",
-  "Eight of Swords": "Negative thoughts, self-imposed restriction, imprisonment",
-  "Nine of Swords": "Anxiety, worry, fear, depression, nightmares",
-  "Ten of Swords": "Painful endings, deep wounds, betrayal, loss, crisis",
-  "Page of Swords": "New ideas, curiosity, thirst for knowledge, new ways of communicating",
-  "Knight of Swords": "Ambitious, action-oriented, driven to succeed, fast-thinking",
-  "Queen of Swords": "Independent, unbiased judgment, clear boundaries, direct communication",
-  "King of Swords": "Mental clarity, intellectual power, authority, truth",
-  "Ace of Pentacles": "A new financial or career opportunity, manifestation, abundance",
-  "Two of Pentacles": "Multiple priorities, time management, prioritisation, adaptability",
-  "Three of Pentacles": "Teamwork, collaboration, learning, implementation",
-  "Four of Pentacles": "Saving money, security, conservatism, scarcity, control",
-  "Five of Pentacles": "Financial loss, poverty, lack mindset, isolation, worry",
-  "Six of Pentacles": "Giving, receiving, sharing wealth, generosity, charity",
-  "Seven of Pentacles": "Long-term view, sustainable results, perseverance, investment",
-  "Eight of Pentacles": "Apprenticeship, repetitive tasks, mastery, skill development",
-  "Nine of Pentacles": "Abundance, luxury, self-sufficiency, financial independence",
-  "Ten of Pentacles": "Wealth, financial security, family, long-term success, contribution",
-  "Page of Pentacles": "Manifestation, financial opportunity, skill development",
-  "Knight of Pentacles": "Hard work, productivity, routine, conservatism",
-  "Queen of Pentacles": "Nurturing, practical, providing financially, a working parent",
-  "King of Pentacles": "Wealth, business leadership, security, discipline, abundance"
-};
-
-
+const card = tarotDeck.find(c => c.name === "The Fool");
+console.log(card.meaning); // works the same as meanings['The Fool']
 
 function showMeanings() {
   let content = "<h2>Card Meanings</h2>";
@@ -884,4 +804,16 @@ tabs.forEach(tab => {
 
     }
   });
+});
+
+// Example: Get meaning of a specific card
+const cardName = "The Fool";
+const card = tarotDeck.find(c => c.name === cardName);
+console.log(card.meaning); // Output: "New beginnings, optimism, trust in life"
+console.log(card.interpretations.upright); // Output: "Excited for new adventures, open-minded, spontaneous"
+
+// Example: Get interpretations for a 3-card reading
+const hand = drawCards(shuffleDeck([...tarotDeck]), 3);
+hand.forEach((c, i) => {
+  console.log(`${c.name} (${['Past','Present','Future'][i]}): ${c.interpretations.upright}`);
 });
