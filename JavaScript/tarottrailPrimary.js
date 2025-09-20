@@ -201,3 +201,24 @@ console.log(tarotDeck);
 console.log(`There are a total of ${tarotDeck.length} cards in a standard tarot deck.`);
 
 console.log("Happy reading!");
+
+const shuffleDeck = (deck) => {
+  for (let i = deck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+  return deck;
+}
+
+const shuffledTarotDeck = shuffleDeck(tarotDeck.slice());
+
+console.log(shuffledTarotDeck);
+
+const drawCards = (deck, numberOfCards) => {
+  return deck.slice(0, numberOfCards);
+}
+
+const hand = drawCards(shuffledTarotDeck, 3);
+
+console.log("Your reading:");
+console.log(hand);
