@@ -222,3 +222,4 @@ const hand = drawCards(shuffledTarotDeck, 3);
 
 console.log("Your reading:");
 console.log(hand);
+
