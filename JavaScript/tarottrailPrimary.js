@@ -1,204 +1,710 @@
-const theFool = 'The Fool';
-const theMagician = 'The Magician';
-const theHighPriestess = 'The High Priestess';
-const theEmpress = 'The Empress';
-const theEmperor = 'The Emperor';
-const theHierophant = 'The Hierophant';
-const theLovers = 'The Lovers';
-const theChariot = 'The Chariot';
-const strength = 'Strength';
-const theHermit = 'The Hermit';
-const wheelOfFortune = 'Wheel of Fortune';
-const justice = 'Justice';
-const theHangedMan = 'The Hanged Man';
-const death = 'Death';
-const temperance = 'Temperance';
-const theDevil = 'The Devil';
-const theTower = 'The Tower';
-const theStar = 'The Star';
-const theMoon = 'The Moon';
-const theSun = 'The Sun';
-const judgement = 'Judgement';
-const theWorld = 'The World';
+// tarotDeck.js
 
-const majorArcana = [
-  theFool,
-  theMagician,
-  theHighPriestess,
-  theEmpress,
-  theEmperor,
-  theHierophant,
-  theLovers,
-  theChariot,
-  strength,
-  theHermit,
-  wheelOfFortune,
-  justice,
-  theHangedMan,
-  death,
-  temperance,
-  theDevil,
-  theTower,
-  theStar,
-  theMoon,
-  theSun,
-  judgement,
-  theWorld
+const tarotDeck = [
+  {
+    name: "The Fool",
+    meaning: "New beginnings, optimism, trust in life",
+    interpretations: {
+      upright: "Excited for new adventures, open-minded, spontaneous",
+      reversed: "Recklessness, hesitation, holding back",
+      threeCardCombo: "If paired with The Magician: opportunity for action"
+    }
+  },
+  {
+    name: "The Magician",
+    meaning: "Action, the power to manifest",
+    interpretations: {
+      upright: "Harnessing your skills and resources",
+      reversed: "Manipulation, poor planning, untapped potential",
+      threeCardCombo: "If paired with The Fool: leap forward into new beginnings"
+    }
+  },
+  {
+    name: "The High Priestess",
+    meaning: "Inaction, going within, the subconscious",
+    interpretations: {
+      upright: "Trust your intuition",
+      reversed: "Secrets, hidden motives, disconnected from inner voice",
+      threeCardCombo: "If paired with The Empress: nurturing your inner wisdom"
+    }
+  },
+  {
+    name: "The Empress",
+    meaning: "Abundance, nurturing, fertility, life in bloom!",
+    interpretations: {
+      upright: "Nurturing, fertility, creativity",
+      reversed: "Smothering, neglecting self-care, lack of growth",
+      threeCardCombo: "If paired with The High Priestess: deepening intuition and creativity"
+    }
+  },
+  {
+    name: "The Emperor",
+    meaning: "Structure, stability, rules and power",
+    interpretations: {
+      upright: "Authority, structure, control",
+      reversed: "Domination, excessive control, rigidity",
+      threeCardCombo: "If paired with The Hierophant: leadership through tradition"
+    }
+  },
+  {
+    name: "The Hierophant",
+    meaning: "Institutions, tradition, society and its rules",
+    interpretations: {
+      upright: "Conformity, tradition, morality",
+      reversed: "Rebellion, subversiveness, new approaches",
+      threeCardCombo: "If paired with The Emperor: structured leadership"
+    }
+  },
+  {
+    name: "The Lovers",
+    meaning: "Sexuality, passion, choice, uniting",
+    interpretations: {
+      upright: "Love, harmony, relationships",
+      reversed: "Disharmony, imbalance, misalignment of values",
+      threeCardCombo: "If paired with The Chariot: passionate pursuit of goals"
+    }
+  },
+  {
+    name: "The Chariot",
+    meaning: "Movement, progress, integration",
+    interpretations: {
+      upright: "Determination, willpower, success",
+      reversed: "Lack of control, aggression, obstacles",
+      threeCardCombo: "If paired with The Lovers: driven by passion"
+    }
+  },
+  {
+    name: "Strength",
+    meaning: "Courage, subtle power, integration of animal self",
+    interpretations: {
+      upright: "Inner strength, courage, compassion",
+      reversed: "Self-doubt, weakness, insecurity",
+      threeCardCombo: "If paired with The Hermit: quiet inner strength"
+    }
+  },
+  {
+    name: "The Hermit",
+    meaning: "Meditation, solitude, consciousness",
+    interpretations: {
+      upright: "Introspection, solitude, inner guidance",
+      reversed: "Isolation, loneliness, withdrawal",
+      threeCardCombo: "If paired with Strength: finding strength in solitude"
+    }
+  },
+  {
+    name: "Wheel of Fortune",
+    meaning: "Cycles, change, ups and downs",
+    interpretations: {
+      upright: "Change, cycles, inevitable fate",
+      reversed: "Bad luck, resistance to change, breaking cycles",
+      threeCardCombo: "If paired with Justice: karmic balance"
+    }
+  },
+  {
+    name: "Justice",
+    meaning: "Fairness, equality, balance",
+    interpretations: {
+      upright: "Truth, fairness, law",
+      reversed: "Dishonesty, imbalance, unfair treatment",
+      threeCardCombo: "If paired with The Wheel of Fortune: karmic justice"
+    }
+  },
+  {
+    name: "The Hanged Man",
+    meaning: "Surrender, new perspective, enlightenment",
+    interpretations: {
+      upright: "Letting go, new perspectives, sacrifice",
+      reversed: "Stalling, resistance to change, indecision",
+      threeCardCombo: "If paired with The Star: hope after sacrifice"
+    }
+  },
+  {
+    name: "Death",
+    meaning: "The end of something, change, the impermeability of all things",
+    interpretations: {
+      upright: "Endings, transformation, transition",
+      reversed: "Resistance to change, personal transformation",
+      threeCardCombo: "If paired with Temperance: balanced transformation"
+    }
+  },
+  {
+    name: "Temperance",
+    meaning: "Balance, moderation, being sensible",
+    interpretations: {
+      upright: "Balance, moderation, purpose",
+      reversed: "Imbalance, excess, lack of long-term vision",
+      threeCardCombo: "If paired with Death: transformative balance"
+    }
+  },
+  {
+    name: "The Devil",
+    meaning: "Destructive patterns, addiction, giving away your power",
+    interpretations: {
+      upright: "Bondage, addiction, materialism",
+      reversed: "Detachment, breaking free, power reclaimed",
+      threeCardCombo: "If paired with The Tower: sudden liberation"
+    }
+  },
+  {
+    name: "The Tower",
+    meaning: "Collapse of stable structures, release, sudden insight",
+    interpretations: {
+      upright: "Sudden change, upheaval, chaos",
+      reversed: "Avoidance of disaster, fear of change",
+      threeCardCombo: "If paired with The Devil: breaking free from bondage"
+    }
+  },
+  {
+    name: "The Star",
+    meaning: "Hope, calm, a good omen!",
+    interpretations: {
+      upright: "Hope, faith, rejuvenation",
+      reversed: "Lack of faith, despair, discouragement",
+      threeCardCombo: "If paired with The Hanged Man: hope after sacrifice"
+    }
+  },
+  {
+    name: "The Moon",
+    meaning: "Mystery, the subconscious, dreams",
+    interpretations: {
+      upright: "Illusion, fear, anxiety, subconscious",
+      reversed: "Release of fear, repressed emotion, inner confusion",
+      threeCardCombo: "If paired with The Sun: clarity after confusion"
+    }
+  },
+  {
+    name: "The Sun",
+    meaning: "Success, happiness, all will be well",
+    interpretations: {
+      upright: "Joy, success, celebration",
+      reversed: "Temporary depression, lack of success",
+      threeCardCombo: "If paired with The Moon: clarity after confusion"
+    }
+  },
+  {
+    name: "Judgement",
+    meaning: "Rebirth, a new phase, inner calling",
+    interpretations: {
+      upright: "Rebirth, inner calling, absolution",
+      reversed: "Self-doubt, refusal of self-examination",
+      threeCardCombo: "If paired with The World: completion and new beginnings"
+    }
+  },
+  {
+    name: "The World",
+    meaning: "Completion, wholeness, attainment, celebration of life",
+    interpretations: {
+      upright: "Completion, integration, accomplishment",
+      reversed: "Lack of closure, incomplete goals",
+      threeCardCombo: "If paired with Judgement: completion and new beginnings"
+    }
+  },
+  // Minor Arcana (Wands, Cups, Swords, Pentacles)
+  // For brevity, only a few examples are included here
+  {
+    name: "Ace of Wands",
+    meaning: "Inspiration, new opportunities, growth, potential",
+    interpretations: {
+      upright: "New beginnings in creativity or career",
+      reversed: "Delays, lack of motivation",
+      threeCardCombo: "If paired with Two of Wands: planning for new ventures"
+    }
+  },
+  {
+    name: "Two of Wands",
+    meaning: "Future planning, progress, decisions, discovery",
+    interpretations: {
+      upright: "Planning, making decisions, leaving comfort zone",
+      reversed: "Fear of change, lack of planning",
+      threeCardCombo: "If paired with Ace of Wands: planning for new ventures"
+    }
+  },
+  {
+    name: "Three of Wands",
+    meaning: "Preparation, foresight, enterprise, expansion",
+    interpretations: {
+      upright: "Expansion, foresight, overseas opportunities",
+      reversed: "Lack of foresight, delays",
+      threeCardCombo: "If paired with Four of Wands: successful expansion"
+    }
+  },
+  {
+    name: "Four of Wands",
+    meaning: "Celebration, joy, harmony, relaxation, homecoming",
+    interpretations: {
+      upright: "Celebration, harmony, homecoming",
+      reversed: "Lack of harmony, tension at home",
+      threeCardCombo: "If paired with Three of Wands: successful expansion"
+    }
+  },
+  {
+    name: "Five of Wands",
+    meaning: "Conflict, disagreements, competition, tension, diversity",
+    interpretations: {
+      upright: "Conflict, competition, diversity",
+      reversed: "Avoidance of conflict, harmony",
+      threeCardCombo: "If paired with Six of Wands: victory after struggle"
+    }
+  },
+  {
+    name: "Six of Wands",
+    meaning: "Success, public recognition, progress, self-confidence",
+    interpretations: {
+      upright: "Victory, recognition, progress",
+      reversed: "Lack of recognition, fall from grace",
+      threeCardCombo: "If paired with Five of Wands: victory after struggle"
+    }
+  },
+  {
+    name: "Seven of Wands",
+    meaning: "Challenge, competition, protection, perseverance",
+    interpretations: {
+      upright: "Perseverance, maintaining control",
+      reversed: "Giving up, overwhelmed",
+      threeCardCombo: "If paired with Eight of Wands: swift action in challenges"
+    }
+  },
+  {
+    name: "Eight of Wands",
+    meaning: "Movement, fast paced change, action",
+    interpretations: {
+      upright: "Rapid action, movement, quick decisions",
+      reversed: "Delays, frustration",
+      threeCardCombo: "If paired with Seven of Wands: swift action in challenges"
+    }
+  },
+  {
+    name: "Nine of Wands",
+    meaning: "Resilience, courage, persistence",
+    interpretations: {
+      upright: "Courage, persistence, test of faith",
+      reversed: "Paranoia, fear of failure",
+      threeCardCombo: "If paired with Ten of Wands: burden and perseverance"
+    }
+  },
+  {
+    name: "Ten of Wands",
+    meaning: "Burden, extra responsibility, hard work, completion",
+    interpretations: {
+      upright: "Burden, responsibility, hard work",
+      reversed: "Taking on too much, burnout",
+      threeCardCombo: "If paired with Nine of Wands: burden and perseverance"
+    }
+  },
+  {
+    name: "Page of Wands",
+    meaning: "Inspiration, ideas, discovery, limitless potential",
+    interpretations: {
+      upright: "New ideas, enthusiasm, exploration",
+      reversed: "Lack of direction, procrastination",
+      threeCardCombo: "If paired with Knight of Wands: pursuing new ideas"
+    }
+  },
+  {
+    name: "Knight of Wands",
+    meaning: "Energy, passion, inspired action, adventure, impulsiveness",
+    interpretations: {
+      upright: "Action, adventure, impulsiveness",
+      reversed: "Recklessness, impatience",
+      threeCardCombo: "If paired with Page of Wands: pursuing new ideas"
+    }     
+  },
+  {     
+    name: "Queen of Wands",
+    meaning: "Confidence, social butterfly, passion, charisma",
+    interpretations: {
+      upright: "Confidence, social butterfly, passion, charisma",
+      reversed: "Jealousy, insecurity, competition",
+      threeCardCombo: "If paired with King of Wands: powerful creative partnership"
+    }
+  },
+  {
+    name: "King of Wands",
+    meaning: "Natural-born leader, vision, entrepreneur, honor",
+    interpretations: {
+      upright: "Leadership, vision, entrepreneur, honor",
+      reversed: "Impulsiveness, overbearing, ruthless",
+      threeCardCombo: "If paired with Queen of Wands: powerful creative partnership"
+    }
+  },
+  {
+    name: "Ace of Cups",
+    meaning: "Love, new relationships, compassion, creativity",
+    interpretations: {
+      upright: "New beginnings in love or creativity",
+      reversed: "Blocked or repressed emotions",
+      threeCardCombo: "If paired with Two of Cups: new romantic relationship"
+    }
+  },
+  {
+    name: "Two of Cups",
+    meaning: "Unified love, partnership, mutual attraction",
+    interpretations: {
+      upright: "Partnership, love, mutual attraction",
+      reversed: "Break-up, imbalance in relationship",
+      threeCardCombo: "If paired with Ace of Cups: new romantic relationship"
+    }
+  },
+  {
+    name: "Three of Cups",
+    meaning: "Celebration, friendship, creativity, collaborations",
+    interpretations: {
+      upright: "Celebration, friendship, creativity",
+      reversed: "Overindulgence, gossip, isolation",
+      threeCardCombo: "If paired with Four of Cups: reevaluating friendships"
+    }
+  },
+  {
+    name: "Four of Cups",
+    meaning: "Meditation, contemplation, apathy, reevaluation",
+    interpretations: {
+      upright: "Contemplation, apathy, reevaluation",
+      reversed: "Boredom, missed opportunities",
+      threeCardCombo: "If paired with Three of Cups: reevaluating friendships"
+    }
+  },
+  {
+    name: "Five of Cups",
+    meaning: "Loss, grief, disappointment, despair, bereavement",
+    interpretations: {
+      upright: "Loss, grief, disappointment",
+      reversed: "Acceptance, moving on, finding peace",
+      threeCardCombo: "If paired with Six of Cups: healing from past grief"
+    }
+  },
+  {
+    name: "Six of Cups",
+    meaning: "Revisiting the past, childhood memories, innocence, joy",
+    interpretations: {
+      upright: "Nostalgia, childhood memories, innocence",
+      reversed: "Living in the past, naivety",
+      threeCardCombo: "If paired with Five of Cups: healing from past grief"
+    }
+  },
+  {
+    name: "Seven of Cups",
+    meaning: "Opportunities, choices, wishful thinking, illusion",
+    interpretations: {
+      upright: "Choices, wishful thinking, illusion",
+      reversed: "Indecision, confusion, overwhelmed by choices",
+      threeCardCombo: "If paired with Eight of Cups: leaving illusions behind"
+    }
+  },
+  {
+    name: "Eight of Cups",
+    meaning: "Disappointment, abandonment, withdrawal, escapism",
+    interpretations: {
+      upright: "Walking away, abandonment, withdrawal",
+      reversed: "Fear of change, stagnation",
+      threeCardCombo: "If paired with Seven of Cups: leaving illusions behind"
+    }
+  },
+  {
+    name: "Nine of Cups",
+    meaning: "Contentment, satisfaction, gratitude, wish come true",
+    interpretations: {
+      upright: "Contentment, satisfaction, gratitude",
+      reversed: "Greed, dissatisfaction, materialism",
+      threeCardCombo: "If paired with Ten of Cups: emotional fulfillment"
+    }
+  },
+  {
+    name: "Ten of Cups",
+    meaning: "Divine love, blissful relationships, harmony",
+    interpretations: {
+      upright: "Harmony, blissful relationships, divine love",
+      reversed: "Broken home, disharmony, misalignment of values",
+      threeCardCombo: "If paired with Nine of Cups: emotional fulfillment"
+    }
+  },
+  {
+    name: "Page of Cups",
+    meaning: "Creative opportunities, intuitive messages, curiosity",
+    interpretations: {
+      upright: "New creative opportunities, curiosity",
+      reversed: "Creative blocks, emotional immaturity",
+      threeCardCombo: "If paired with Knight of Cups: pursuing creative passions"
+    }
+  },
+  {
+    name: "Knight of Cups",
+    meaning: "Romance, charm, 'Knight in shining armor', imagination",
+    interpretations: {
+      upright: "Romance, charm, imagination",
+      reversed: "Unreliability, moodiness, unrealistic expectations",
+      threeCardCombo: "If paired with Page of Cups: pursuing creative passions"
+    }
+  },
+  {
+    name: "Queen of Cups",
+    meaning: "Compassionate, caring, emotionally stable, intuitive, in flow",
+    interpretations: {
+      upright: "Compassionate, caring, emotionally stable",
+      reversed: "Emotional insecurity, co-dependency",
+      threeCardCombo: "If paired with King of Cups: balanced emotional partnership"
+    }
+  },
+  {
+    name: "King of Cups",
+    meaning: "Emotional balance and control, generosity",
+    interpretations: {
+      upright: "Emotional balance, generosity, diplomacy",
+      reversed: "Emotional manipulation, moodiness",
+      threeCardCombo: "If paired with Queen of Cups: balanced emotional partnership"
+    }
+  },
+  {
+    name: "Ace of Swords",
+    meaning: "Breakthroughs, new ideas, mental clarity, success",
+    interpretations: {
+      upright: "New ideas, mental clarity, breakthroughs",
+      reversed: "Confusion, lack of clarity, misinformation",
+      threeCardCombo: "If paired with Two of Swords: difficult decisions"
+    }
+  },
+  {
+    name: "Two of Swords",
+    meaning: "Difficult decisions, weighing up options, an impasse, avoidance",
+    interpretations: {
+      upright: "Difficult decisions, weighing options, impasse",
+      reversed: "Indecision, confusion, information overload",
+      threeCardCombo: "If paired with Ace of Swords: difficult decisions"
+    }
+  },
+  {
+    name: "Three of Swords",
+    meaning: "Heartbreak, emotional pain, sorrow, grief, hurt",
+    interpretations: {
+      upright: "Heartbreak, emotional pain, sorrow",
+      reversed: "Recovery, forgiveness, moving on",
+      threeCardCombo: "If paired with Four of Swords: healing from heartbreak"
+    }
+  },
+  {
+    name: "Four of Swords",
+    meaning: "Rest, relaxation, meditation, contemplation, recuperation",
+    interpretations: {
+      upright: "Rest, recuperation, contemplation",
+      reversed: "Burnout, stress, lack of rest",
+      threeCardCombo: "If paired with Three of Swords: healing from heartbreak"
+    }
+  },
+  {
+    name: "Five of Swords",
+    meaning: "Conflict, disagreements, competition, defeat, winning at all costs",
+    interpretations: {
+      upright: "Conflict, defeat, winning at all costs",
+      reversed: "Reconciliation, making amends",
+      threeCardCombo: "If paired with Six of Swords: moving on from conflict"
+    }
+  },
+  {
+    name: "Six of Swords",
+    meaning: "Transition, change, rite of passage, releasing baggage",
+    interpretations: {
+      upright: "Transition, change, rite of passage",
+      reversed: "Resistance to change, carrying baggage",
+      threeCardCombo: "If paired with Five of Swords: moving on from conflict"
+    }
+  },
+  {
+    name: "Seven of Swords",
+    meaning: "Betrayal, deception, getting away with something, stealth", 
+    interpretations: {
+      upright: "Betrayal, deception, getting away with something",
+      reversed: "Coming clean, rethinking approach",
+      threeCardCombo: "If paired with Eight of Swords: feeling trapped by deception"
+    }
+  },
+  {
+    name: "Eight of Swords",
+    meaning: "Feeling trapped, restriction, self-imposed limitations",
+    interpretations: {
+      upright: "Feeling trapped, restriction, self-imposed limitations",
+      reversed: "Freedom, release, new perspectives",
+      threeCardCombo: "If paired with Seven of Swords: feeling trapped by deception"
+    }
+  },
+  {
+    name: "Nine of Swords",
+    meaning: "Anxiety, worry, fear, nightmares",
+    interpretations: {
+      upright: "Anxiety, worry, fear",
+      reversed: "Finding peace, releasing fear",
+      threeCardCombo: "If paired with Ten of Swords: end of a difficult situation"
+    }
+  },
+  {
+    name: "Ten of Swords",
+    meaning: "Betrayal, loss, crisis, endings",
+    interpretations: {
+      upright: "Betrayal, loss, crisis",
+      reversed: "Recovery, regeneration, new beginnings",
+      threeCardCombo: "If paired with Nine of Swords: end of a difficult situation"
+    }
+  },
+  {
+    name: "Page of Swords",
+    meaning: "Curiosity, intelligence, new ideas, mental energy",
+    interpretations: {
+      upright: "Curiosity, intelligence, new ideas",
+      reversed: "Lack of direction, confusion, misinformation",
+      threeCardCombo: "If paired with Knight of Swords: a battle of wits"
+    }
+  },
+  {
+    name: "Knight of Swords",
+    meaning: "Action, ambition, fast thinking",
+    interpretations: {
+      upright: "Action, ambition, fast thinking",
+      reversed: "Rashness, scattered thought, impulsiveness",
+      threeCardCombo: "If paired with Page of Swords: a battle of wits"
+    }
+  },
+  {
+    name: "Queen of Swords",
+    meaning: "Independence, complexity, perception",
+    interpretations: {
+      upright: "Independence, complexity, perception",
+      reversed: "Confusion, complexity, lack of clarity",
+      threeCardCombo: "If paired with King of Swords: a powerful intellectual partnership"
+    }
+  },
+  {
+    name: "King of Swords",
+    meaning: "Intellectual power, authority, truth",
+    interpretations: {
+      upright: "Intellectual power, authority, truth",
+      reversed: "Manipulation, abuse of power, lack of clarity",
+      threeCardCombo: "If paired with Queen of Swords: a powerful intellectual partnership"
+    }
+  },
+  {
+    name: "Ace of Pentacles",
+    meaning: "New beginnings, prosperity, material wealth",
+    interpretations: {
+      upright: "New beginnings, prosperity, material wealth",
+      reversed: "Missed opportunities, lack of planning",
+      threeCardCombo: "If paired with Two of Pentacles: balancing resources"
+    }
+  },
+  {
+    name: "Two of Pentacles",
+    meaning: "Balance, adaptability, time management",
+    interpretations: {
+      upright: "Balance, adaptability, time management",
+      reversed: "Overwhelm, disorganization, lack of balance",
+      threeCardCombo: "If paired with Ace of Pentacles: balancing new opportunities"
+    }
+  },
+  {
+    name: "Three of Pentacles",
+    meaning: "Teamwork, collaboration, skillful craftsmanship",
+    interpretations: {
+      upright: "Teamwork, collaboration, skillful craftsmanship",
+      reversed: "Lack of teamwork, disorganization, poor planning",
+      threeCardCombo: "If paired with Four of Pentacles: a need to share resources"
+    }
+  },
+  {
+    name: "Four of Pentacles",
+    meaning: "Control, stability, security, possession",
+    interpretations: {
+      upright: "Control, stability, security",
+      reversed: "Possessiveness, insecurity, instability",
+      threeCardCombo: "If paired with Five of Pentacles: a need to let go"
+    }
+  },
+  {
+    name: "Five of Pentacles",
+    meaning: "Financial loss, poverty, isolation",
+    interpretations: {
+      upright: "Financial loss, poverty, isolation",
+      reversed: "Recovery, improvement, finding help",
+      threeCardCombo: "If paired with Six of Pentacles: a need to seek help"
+    }
+  },
+  {
+    name: "Six of Pentacles",
+    meaning: "Generosity, charity, giving and receiving",
+    interpretations: {
+      upright: "Generosity, charity, giving and receiving",
+      reversed: "Debt, selfishness, one-sided charity",
+      threeCardCombo: "If paired with Five of Pentacles: a need to seek help"
+    }
+  },
+  {
+    name: "Seven of Pentacles",
+    meaning: "Assessment, patience, long-term view",
+    interpretations: {
+      upright: "Assessment, patience, long-term view",
+      reversed: "Lack of long-term vision, impatience",
+      threeCardCombo: "If paired with Eight of Pentacles: patience in skill development"
+    }
+  },
+  {
+    name: "Eight of Pentacles",
+    meaning: "Apprenticeship, repetitive tasks, mastery, skill development",
+    interpretations: {
+      upright: "Apprenticeship, mastery, skill development",
+      reversed: "Lack of focus, perfectionism, boredom",
+      threeCardCombo: "If paired with Seven of Pentacles: patience in skill development"
+    }
+  },
+  {    name: "Nine of Pentacles",
+    meaning: "Abundance, luxury, self-sufficiency",
+    interpretations: {
+      upright: "Abundance, luxury, self-sufficiency",
+      reversed: "Financial setbacks, over-investment",
+      threeCardCombo: "If paired with Ten of Pentacles: enjoying the fruits of labor"
+    }
+  },
+  {
+    name: "Ten of Pentacles",
+    meaning: "Wealth, inheritance, family, establishment",
+    interpretations: {
+      upright: "Wealth, inheritance, family, establishment",
+      reversed: "Financial failure, loss, lack of stability",
+      threeCardCombo: "If paired with Nine of Pentacles: enjoying the fruits of labor"
+    }
+  },
+  {
+    name: "Page of Pentacles",
+    meaning: "Manifestation, financial opportunity, skill development",
+    interpretations: {
+      upright: "Manifestation, financial opportunity, skill development",
+      reversed: "Lack of progress, procrastination, learning from failure",
+      threeCardCombo: "If paired with Knight of Pentacles: pursuing financial goals"
+    }
+  },
+  {
+    name: "Knight of Pentacles",
+    meaning: "Hard work, productivity, routine, conservatism",
+    interpretations: {
+      upright: "Hard work, productivity, routine",
+      reversed: "Laziness, stagnation, lack of progress",
+      threeCardCombo: "If paired with Page of Pentacles: pursuing financial goals"
+    }
+  },
+  {
+    name: "Queen of Pentacles",
+    meaning: "Nurturing, practical, providing financially",
+    interpretations: {
+      upright: "Nurturing, practical, providing financially",
+      reversed: "Smothering, financial insecurity, lack of self-care",
+      threeCardCombo: "If paired with King of Pentacles: a strong financial partnership"
+    }
+  },
+  {
+    name: "King of Pentacles",
+    meaning: "Wealth, business, leadership, security",
+    interpretations: {
+      upright: "Wealth, business, leadership, security",
+      reversed: "Greed, indulgence, financial insecurity",
+      threeCardCombo: "If paired with Queen of Pentacles: a strong financial partnership"
+    }
+  }
 ];
-
-console.log(majorArcana);
-
-console.log(`There are ${majorArcana.length} cards in the Major Arcana.`);
-
-const aceofWands = 'Ace of Wands';
-const twoofWands = 'Two of Wands';
-const threeofWands = 'Three of Wands';
-const fourofWands = 'Four of Wands';
-const fiveofWands = 'Five of Wands';
-const sixofWands = 'Six of Wands';
-const sevenofWands = 'Seven of Wands';
-const eightofWands = 'Eight of Wands';
-const nineofWands = 'Nine of Wands';
-const tenofWands = 'Ten of Wands';
-const pageofWands = 'Page of Wands';
-const knightofWands = 'Knight of Wands';
-const queenofWands = 'Queen of Wands';
-const kingofWands = 'King of Wands';
-
-const wands = [
-  aceofWands,
-  twoofWands,
-  threeofWands,
-  fourofWands,
-  fiveofWands,
-  sixofWands,
-  sevenofWands,
-  eightofWands,
-  nineofWands,
-  tenofWands,
-  pageofWands,
-  knightofWands,
-  queenofWands,
-  kingofWands
-];
-
-console.log(wands);
-
-console.log(`There are ${wands.length} cards in the suit of Wands.`);
-
-const aceofCups = 'Ace of Cups';
-const twoofCups = 'Two of Cups';
-const threeofCups = 'Three of Cups';
-const fourofCups = 'Four of Cups';
-const fiveofCups = 'Five of Cups';
-const sixofCups = 'Six of Cups';
-const sevenofCups = 'Seven of Cups';
-const eightofCups = 'Eight of Cups';
-const nineofCups = 'Nine of Cups';
-const tenofCups = 'Ten of Cups';
-const pageofCups = 'Page of Cups';
-const knightofCups = 'Knight of Cups';
-const queenofCups = 'Queen of Cups';
-const kingofCups = 'King of Cups';
-
-const cups = [
-  aceofCups,
-  twoofCups,
-  threeofCups,
-  fourofCups,
-  fiveofCups,
-  sixofCups,
-  sevenofCups,
-  eightofCups,
-  nineofCups,
-  tenofCups,
-  pageofCups,
-  knightofCups,
-  queenofCups,
-  kingofCups
-];
-
-console.log(cups);
-
-console.log(`There are ${cups.length} cards in the suit of Cups.`);
-
-const aceofSwords = 'Ace of Swords';
-const twoofSwords = 'Two of Swords';
-const threeofSwords = 'Three of Swords';
-const fourofSwords = 'Four of Swords';
-const fiveofSwords = 'Five of Swords';
-const sixofSwords = 'Six of Swords';
-const sevenofSwords = 'Seven of Swords';
-const eightofSwords = 'Eight of Swords';
-const nineofSwords = 'Nine of Swords';
-const tenofSwords = 'Ten of Swords';
-const pageofSwords = 'Page of Swords';
-const knightofSwords = 'Knight of Swords';
-const queenofSwords = 'Queen of Swords';
-const kingofSwords = 'King of Swords';
-
-const swords = [
-  aceofSwords,
-  twoofSwords,
-  threeofSwords,
-  fourofSwords,
-  fiveofSwords,
-  sixofSwords,
-  sevenofSwords,
-  eightofSwords,
-  nineofSwords,
-  tenofSwords,
-  pageofSwords,
-  knightofSwords,
-  queenofSwords,
-  kingofSwords
-];
-
-console.log(swords);
-
-console.log(`There are ${swords.length} cards in the suit of Swords.`);
-
-const aceofPentacles = 'Ace of Pentacles';
-const twoofPentacles = 'Two of Pentacles';
-const threeofPentacles = 'Three of Pentacles';
-const fourofPentacles = 'Four of Pentacles';
-const fiveofPentacles = 'Five of Pentacles';
-const sixofPentacles = 'Six of Pentacles';
-const sevenofPentacles = 'Seven of Pentacles';
-const eightofPentacles = 'Eight of Pentacles';
-const nineofPentacles = 'Nine of Pentacles';
-const tenofPentacles = 'Ten of Pentacles';
-const pageofPentacles = 'Page of Pentacles';
-const knightofPentacles = 'Knight of Pentacles';
-const queenofPentacles = 'Queen of Pentacles';
-const kingofPentacles = 'King of Pentacles';
-
-const pentacles = [
-  aceofPentacles,
-  twoofPentacles,
-  threeofPentacles,
-  fourofPentacles,
-  fiveofPentacles,
-  sixofPentacles,
-  sevenofPentacles,
-  eightofPentacles,
-  nineofPentacles,
-  tenofPentacles,
-  pageofPentacles,
-  knightofPentacles,
-  queenofPentacles,
-  kingofPentacles
-];
-
-console.log(pentacles);
-
-console.log(`There are ${pentacles.length} cards in the suit of Pentacles.`);
-
-const tarotDeck = majorArcana.concat(wands, cups, swords, pentacles);
-
-console.log(tarotDeck);
-
-console.log(`There are a total of ${tarotDeck.length} cards in a standard tarot deck.`);
 
 console.log("Happy reading!");
 
@@ -226,7 +732,156 @@ const printReading = (hand) => {
   });
 }
 
-const hand = drawCards(shuffledTarotDeck, 3);
+const drawButton = document.getElementById("drawButton");
+const resultDiv = document.getElementById("result");
 
-printReading(hand);
+drawButton.addEventListener("click", () => {
+  const hand = drawCards(shuffledTarotDeck, 3);
+  resultDiv.innerHTML = "";
+  const positions = ['Past', 'Present', 'Future'];
+  hand.forEach((card, i) => {
+    const p = document.createElement("p");
+    p.textContent = `${positions[i]}: ${card}`;
+    resultDiv.appendChild(p);
+  });
+});
 
+const meanings = {
+  "The Fool": "New beginnings, optimism, trust in life",
+  "The Magician": "Action, the power to manifest",
+  "The High Priestess": "Inaction, going within, the subconscious",
+  "The Empress": "Abundance, nurturing, fertility, life in bloom!",
+  "The Emperor": "Structure, stability, rules and power",
+  "The Hierophant": "Institutions, tradition, society and its rules",
+  "The Lovers": "Sexuality, passion, choice, uniting",
+  "The Chariot": "Movement, progress, integration",
+  "Strength": "Courage, subtle power, integration of animal self",
+  "The Hermit": "Meditation, solitude, consciousness",
+  "Wheel of Fortune": "Cycles, change, ups and downs",
+  "Justice": "Fairness, equality, balance",
+  "The Hanged Man": "Surrender, new perspective, enlightenment",
+  "Death": "The end of something, change, the impermeability of all things",
+  "Temperance": "Balance, moderation, being sensible",
+  "The Devil": "Destructive patterns, addiction, giving away your power",
+  "The Tower": "Collapse of stable structures, release, sudden insight",
+  "The Star": "Hope, calm, a good omen!",
+  "The Moon": "Mystery, the subconscious, dreams",
+  "The Sun": "Success, happiness, all will be well",
+  "Judgement": "Rebirth, a new phase, inner calling",
+  "The World": "Completion, wholeness, attainment, celebration of life",
+  "Ace of Wands": "Inspiration, new opportunities, growth, potential",
+  "Two of Wands": "Future planning, progress, decisions, discovery",
+  "Three of Wands": "Preparation, foresight, enterprise, expansion",
+  "Four of Wands": "Celebration, joy, harmony, relaxation, homecoming",
+  "Five of Wands": "Conflict, disagreements, competition, tension, diversity",
+  "Six of Wands": "Success, public recognition, progress, self-confidence",
+  "Seven of Wands": "Challenge, competition, protection, perseverance",
+  "Eight of Wands": "Movement, fast paced change, action",
+  "Nine of Wands": "Resilience, courage, persistence",
+  "Ten of Wands": "Burden, extra responsibility, hard work, completion",
+  "Page of Wands": "Inspiration, ideas, discovery, limitless potential",
+  "Knight of Wands": "Energy, passion, inspired action, adventure, impulsiveness",
+  "Queen of Wands": "Courage, confidence, independence, social butterfly",
+  "King of Wands": "Natural-born leader, vision, entrepreneur, honor",
+  "Ace of Cups": "Love, new relationships, compassion, creativity",
+  "Two of Cups": "Unified love, partnership, mutual attraction",
+  "Three of Cups": "Celebration, friendship, creativity, collaborations",
+  "Four of Cups": "Meditation, contemplation, apathy, reevaluation",
+  "Five of Cups": "Loss, grief, disappointment, despair, bereavement",
+  "Six of Cups": "Revisiting the past, childhood memories, innocence, joy",
+  "Seven of Cups": "Opportunities, choices, wishful thinking, illusion",
+  "Eight of Cups": "Disappointment, abandonment, withdrawal, escapism",
+  "Nine of Cups": "Contentment, satisfaction, gratitude, wish come true",
+  "Ten of Cups": "Divine love, blissful relationships, harmony",
+  "Page of Cups": "Creative opportunities, intuitive messages, curiosity",
+  "Knight of Cups": "Romance, charm, 'Knight in shining armor', imagination",
+  "Queen of Cups": "Compassionate, caring, emotionally stable, intuitive, in flow",
+  "King of Cups": "Emotional balance and control, generosity",
+  "Ace of Swords": "Breakthroughs, new ideas, mental clarity, success",
+  "Two of Swords": "Difficult decisions, weighing up options, an impasse, avoidance",
+  "Three of Swords": "Heartbreak, emotional pain, sorrow, grief, hurt",
+  "Four of Swords": "Rest, relaxation, meditation, contemplation, recuperation",
+  "Five of Swords": "Conflict, disagreements, competition, defeat, winning at all costs",
+  "Six of Swords": "Transition, change, rite of passage, releasing baggage",
+  "Seven of Swords": "Betrayal, deception, getting away with something, stealth",
+  "Eight of Swords": "Negative thoughts, self-imposed restriction, imprisonment",
+  "Nine of Swords": "Anxiety, worry, fear, depression, nightmares",
+  "Ten of Swords": "Painful endings, deep wounds, betrayal, loss, crisis",
+  "Page of Swords": "New ideas, curiosity, thirst for knowledge, new ways of communicating",
+  "Knight of Swords": "Ambitious, action-oriented, driven to succeed, fast-thinking",
+  "Queen of Swords": "Independent, unbiased judgment, clear boundaries, direct communication",
+  "King of Swords": "Mental clarity, intellectual power, authority, truth",
+  "Ace of Pentacles": "A new financial or career opportunity, manifestation, abundance",
+  "Two of Pentacles": "Multiple priorities, time management, prioritisation, adaptability",
+  "Three of Pentacles": "Teamwork, collaboration, learning, implementation",
+  "Four of Pentacles": "Saving money, security, conservatism, scarcity, control",
+  "Five of Pentacles": "Financial loss, poverty, lack mindset, isolation, worry",
+  "Six of Pentacles": "Giving, receiving, sharing wealth, generosity, charity",
+  "Seven of Pentacles": "Long-term view, sustainable results, perseverance, investment",
+  "Eight of Pentacles": "Apprenticeship, repetitive tasks, mastery, skill development",
+  "Nine of Pentacles": "Abundance, luxury, self-sufficiency, financial independence",
+  "Ten of Pentacles": "Wealth, financial security, family, long-term success, contribution",
+  "Page of Pentacles": "Manifestation, financial opportunity, skill development",
+  "Knight of Pentacles": "Hard work, productivity, routine, conservatism",
+  "Queen of Pentacles": "Nurturing, practical, providing financially, a working parent",
+  "King of Pentacles": "Wealth, business leadership, security, discipline, abundance"
+};
+
+
+
+function showMeanings() {
+  let content = "<h2>Card Meanings</h2>";
+  tarotDeck.forEach(card => {
+    content += `<p><strong>${card}:</strong> ${meanings[card]}</p>`;
+  });
+  tabContent.innerHTML = content;
+}
+
+function showThreeCardReading() {
+  tabContent.innerHTML = "<h2>Your Three Card Reading</h2><p>Shuffle & draw 3 cards here...</p>";
+}
+
+function showSpreadCreator() {
+  tabContent.innerHTML = "<h2>Create Your Own Tarot Spread</h2><p>Drag and Drop cards to build custom spreads!</p>";
+}
+
+function showMoreGames() {
+  tabContent.innerHTML = "<h2>More Games Coming Soon!</h2><p>Stay tuned for more tarot games and activities.</p>";
+}
+
+function showTarotExpeditions() {
+  tabContent.innerHTML = "<h2>Tarot Expeditions</h2><p>Adventure mode will live here!</p>";
+}
+
+const tabContent = document.getElementById("tabContent");
+const tabs = document.querySelectorAll(".localNav button");
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    const type = tab.dataset.tab;
+  
+  switch (type) {
+    case "meanings": 
+      showMeanings();
+      break;
+
+    case "threeCardReading": 
+      showThreeCardReading();
+      break;
+
+    case "createSpread": 
+      showSpreadCreator();
+      break;
+
+      case "moreGames": 
+      showMoreGames(); 
+      break;
+
+      case "tarotExpeditions": 
+      showTarotExpeditions(); 
+      break;
+
+    default: tabContent.innerHTML = "Select a tab to see content.";
+
+    }
+  });
+});
