@@ -50,3 +50,154 @@ console.log(majorArcana);
 
 console.log(`There are ${majorArcana.length} cards in the Major Arcana.`);
 
+const aceofWands = 'Ace of Wands';
+const twoofWands = 'Two of Wands';
+const threeofWands = 'Three of Wands';
+const fourofWands = 'Four of Wands';
+const fiveofWands = 'Five of Wands';
+const sixofWands = 'Six of Wands';
+const sevenofWands = 'Seven of Wands';
+const eightofWands = 'Eight of Wands';
+const nineofWands = 'Nine of Wands';
+const tenofWands = 'Ten of Wands';
+const pageofWands = 'Page of Wands';
+const knightofWands = 'Knight of Wands';
+const queenofWands = 'Queen of Wands';
+const kingofWands = 'King of Wands';
+
+const wands = [
+  aceofWands,
+  twoofWands,
+  threeofWands,
+  fourofWands,
+  fiveofWands,
+  sixofWands,
+  sevenofWands,
+  eightofWands,
+  nineofWands,
+  tenofWands,
+  pageofWands,
+  knightofWands,
+  queenofWands,
+  kingofWands
+];
+
+console.log(wands);
+
+console.log(`There are ${wands.length} cards in the suit of Wands.`);
+
+const aceofCups = 'Ace of Cups';
+const twoofCups = 'Two of Cups';
+const threeofCups = 'Three of Cups';
+const fourofCups = 'Four of Cups';
+const fiveofCups = 'Five of Cups';
+const sixofCups = 'Six of Cups';
+const sevenofCups = 'Seven of Cups';
+const eightofCups = 'Eight of Cups';
+const nineofCups = 'Nine of Cups';
+const tenofCups = 'Ten of Cups';
+const pageofCups = 'Page of Cups';
+const knightofCups = 'Knight of Cups';
+const queenofCups = 'Queen of Cups';
+const kingofCups = 'King of Cups';
+
+const cups = [
+  aceofCups,
+  twoofCups,
+  threeofCups,
+  fourofCups,
+  fiveofCups,
+  sixofCups,
+  sevenofCups,
+  eightofCups,
+  nineofCups,
+  tenofCups,
+  pageofCups,
+  knightofCups,
+  queenofCups,
+  kingofCups
+];
+
+console.log(cups);
+
+console.log(`There are ${cups.length} cards in the suit of Cups.`);
+
+const aceofSwords = 'Ace of Swords';
+const twoofSwords = 'Two of Swords';
+const threeofSwords = 'Three of Swords';
+const fourofSwords = 'Four of Swords';
+const fiveofSwords = 'Five of Swords';
+const sixofSwords = 'Six of Swords';
+const sevenofSwords = 'Seven of Swords';
+const eightofSwords = 'Eight of Swords';
+const nineofSwords = 'Nine of Swords';
+const tenofSwords = 'Ten of Swords';
+const pageofSwords = 'Page of Swords';
+const knightofSwords = 'Knight of Swords';
+const queenofSwords = 'Queen of Swords';
+const kingofSwords = 'King of Swords';
+
+const swords = [
+  aceofSwords,
+  twoofSwords,
+  threeofSwords,
+  fourofSwords,
+  fiveofSwords,
+  sixofSwords,
+  sevenofSwords,
+  eightofSwords,
+  nineofSwords,
+  tenofSwords,
+  pageofSwords,
+  knightofSwords,
+  queenofSwords,
+  kingofSwords
+];
+
+console.log(swords);
+
+console.log(`There are ${swords.length} cards in the suit of Swords.`);
+
+const aceofPentacles = 'Ace of Pentacles';
+const twoofPentacles = 'Two of Pentacles';
+const threeofPentacles = 'Three of Pentacles';
+const fourofPentacles = 'Four of Pentacles';
+const fiveofPentacles = 'Five of Pentacles';
+const sixofPentacles = 'Six of Pentacles';
+const sevenofPentacles = 'Seven of Pentacles';
+const eightofPentacles = 'Eight of Pentacles';
+const nineofPentacles = 'Nine of Pentacles';
+const tenofPentacles = 'Ten of Pentacles';
+const pageofPentacles = 'Page of Pentacles';
+const knightofPentacles = 'Knight of Pentacles';
+const queenofPentacles = 'Queen of Pentacles';
+const kingofPentacles = 'King of Pentacles';
+
+const pentacles = [
+  aceofPentacles,
+  twoofPentacles,
+  threeofPentacles,
+  fourofPentacles,
+  fiveofPentacles,
+  sixofPentacles,
+  sevenofPentacles,
+  eightofPentacles,
+  nineofPentacles,
+  tenofPentacles,
+  pageofPentacles,
+  knightofPentacles,
+  queenofPentacles,
+  kingofPentacles
+];
+
+console.log(pentacles);
+
+console.log(`There are ${pentacles.length} cards in the suit of Pentacles.`);
+
+const tarotDeck = majorArcana.concat(wands, cups, swords, pentacles);
+
+console.log(tarotDeck);
+
+console.log(`There are a total of ${tarotDeck.length} cards in a standard tarot deck.`);
+
+console.log("Happy reading!");
