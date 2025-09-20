@@ -218,8 +218,15 @@ const drawCards = (deck, numberOfCards) => {
   return deck.slice(0, numberOfCards);
 }
 
+const printReading = (hand) => {
+  const positions = ['Past', 'Present', 'Future'];
+  console.log("Your reading:");
+  hand.forEach((card, i) => {
+    console.log(`${positions[i]}: ${card}`);
+  });
+}
+
 const hand = drawCards(shuffledTarotDeck, 3);
 
-console.log("Your reading:");
-console.log(hand);
+printReading(hand);
 
