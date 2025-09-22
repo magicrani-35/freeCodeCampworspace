@@ -1,5 +1,8 @@
-// tarotDeck.js
+// ===============================
+// Tarot Deck Data
+// ===============================
 
+// Major Arcana cards (22)
 const tarotDeck = [
   {
     name: "The Fool",
@@ -200,7 +203,6 @@ const tarotDeck = [
     }
   },
   // Minor Arcana (Wands, Cups, Swords, Pentacles)
-  // For brevity, only a few examples are included here
   {
     name: "Ace of Wands",
     meaning: "Inspiration, new opportunities, growth, potential",
@@ -708,6 +710,10 @@ const tarotDeck = [
 
 console.log("Happy Reading!");
 
+// ===============================
+// Build Full Deck
+// ===============================
+
 const shuffleDeck = (deck) => {
   for (let i = deck.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -728,12 +734,20 @@ const printReading = (hand) => {
   const positions = ['Past', 'Present', 'Future'];
   console.log("Your reading:");
   hand.forEach((card, i) => {
-    console.log(`${positions[i]}: ${card}`);
+    console.log(`${positions[i]}: ${card.name} - ${card.meaning}`);
   });
 }
 
+// ===============================
+// DOM Setup
+// ===============================
+
 const drawButton = document.getElementById("drawButton");
 const resultDiv = document.getElementById("result");
+
+// ===============================
+// Event Listener
+// ===============================
 
 drawButton.addEventListener("click", () => {
   const hand = drawCards(shuffledTarotDeck, 3);
@@ -741,7 +755,7 @@ drawButton.addEventListener("click", () => {
   const positions = ['Past', 'Present', 'Future'];
   hand.forEach((card, i) => {
     const p = document.createElement("p");
-    p.textContent = `${positions[i]}: ${card}`;
+    p.textContent = `${positions[i]}: ${card.name} - ${card.meaning}`;
     resultDiv.appendChild(p);
   });
 });
