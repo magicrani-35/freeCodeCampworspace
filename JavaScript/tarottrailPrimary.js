@@ -808,7 +808,7 @@ tabs.forEach(tab => {
 
 // Example: Get meaning of a specific card
 const cardName = "The Fool";
-const card = tarotDeck.find(c => c.name === cardName);
+cardName = tarotDeck.find(c => c.name === cardName);
 console.log(card.meaning); // Output: "New beginnings, optimism, trust in life"
 console.log(card.interpretations.upright); // Output: "Excited for new adventures, open-minded, spontaneous"
 
