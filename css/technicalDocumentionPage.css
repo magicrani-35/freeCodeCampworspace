@@ -1,0 +1,6 @@
+@media (min-width: 648px) and (max-width: 1200px) {
+  #main-doc {
+    padding: 10px;
+    width: 100%;
+  }
+}
