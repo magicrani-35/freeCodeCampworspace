@@ -1,0 +1,107 @@
+#nav-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+  }
+  
+  ul li {
+    float: left;
+  }
+  
+  ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+  }
+  
+  ul li a:hover {
+    background-color: #111111;
+  }
+  
+  img {
+    width: 800px;
+    height: 200px;
+    max-width: 100%;
+    margin-top: 45px;
+    padding: 15px 25px;
+    z-index: 1;
+  }
+  
+  #header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  body {
+    text-align: center;align-content: center; 
+    padding: 10px;
+  }
+  
+  .plans {
+    border: 5px double #33beef;
+    border-collapse: collapse;
+    width: 100%
+  }
+  
+  .plans th {
+    border-bottom: 3px solid #1f4452;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.5em;
+  }
+  
+  .plans td {
+    border-bottom: 1px solid #1f4452;
+    border-right: 1px solid #1f4452;
+    padding: 10px;
+    vertical-align: top;
+  }
+  
+  .plans tr td:last-child {
+    border-right: none;
+  }
+  
+  @media (max-width: 700px) {
+    #header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #nav-bar ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    #nav-bar ul li {
+      float: none;
+      text-align: left;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin: 12px 0;
+      padding: 0 10px;
+    }
+    .plans {
+      font-size: 1em;
+    }
+  }
+  
